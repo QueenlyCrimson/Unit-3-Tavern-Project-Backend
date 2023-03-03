@@ -22,6 +22,10 @@ A Trello board was used to keep track of development progress and can be viewed 
 
 The project itself was deployed and can be viewed [here]().
 
+##### ***Repo Links***
+[Frontend Repo](https://github.com/QueenlyCrimson/Unit-3-Tavern-Project)
+[Backend Repo](https://github.com/QueenlyCrimson/Unit-3-Tavern-Project-Backend)
+
 
 ### ***Development Diagrams***
 [ERD](https://lucid.app/lucidchart/fb4db2ca-5986-45b7-ad0d-20339078978a/edit?invitationId=inv_c0243f13-ea08-499d-9871-2073287f036c&page=0_0#)
