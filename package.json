@@ -4,7 +4,9 @@
   "description": "*** ## ***Description*** #### This is our repository for our unit 3 project where we will create a Full Stack PERN application, incorporating Postgres, Express, React, as well as Nodejs. We chose to develop a social media platform that will allow incorporate functionalities from your favorite social media platforms. Users will be able to sign up / sign in, create post, interact with post from other users by commenting and likes. Our users will be able to have their own profiles which will display their info as well as post that they have created.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js",
+    "start": "node app.js"
   },
   "keywords": [],
   "author": "",
