@@ -9,14 +9,25 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      userId: {
-        type: Sequelize.INTEGER
+      userName: {
+        type: Sequelize.STRING,
+        allowNull:false
+      },
+      content: {
+        type: Sequelize.STRING,
+        allowNull:false
       },
       img: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull:true
       },
       likeCount: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull:true
+      },
+      userId: {
+        type: Sequelize.INTEGER,
+        allowNull:false
       },
       createdAt: {
         allowNull: false,
