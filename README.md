@@ -35,7 +35,7 @@ The project itself was deployed and can be viewed [here]().
 ##### ERD
 ![Image](https://i.postimg.cc/ZYP4RDbJ/Screenshot-2023-03-03-at-10-22-06-AM.png)
 ##### Componet Hierarchy Diagram
-![Image](https://i.postimg.cc/d0qwG24z/Screenshot-2023-03-03-at-10-23-44-AM.png)
+![Image](https://i.postimg.cc/bwxnG4PR/Screenshot-2023-03-03-at-11-53-37-AM.png)
 ***
 #### Developed By: 
 ##### Chikodi Merenu [Github](https://github.com/CMerenu) | [LinkedIn](https://www.linkedin.com/in/chikodimerenu/) 
