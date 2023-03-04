@@ -10,7 +10,14 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      comment.belongsTo(models.user,{
+        foreignKey:'userId',
+        as:'comments'
+      })
+      comment.belongsTo(models.post,{
+        foreignKey:'postId',
+        as:'comment-posts'
+      })
     }
   }
   comment.init({
@@ -22,10 +29,21 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false},
     userId: {
       type:DataTypes.INTEGER,
-      allowNull: false},
+      allowNull:false,
+      onDelete:'CASCADE',
+      references:{
+        model:'users',
+        key:'id'
+      }
+    },
     postId: {
       type:DataTypes.INTEGER,
-      allowNull: false},
+      allowNull:false,
+      onDelete:'CASCADE',
+      references:{
+        model:'posts',
+        key:'id'
+      }},
     likeCount: {
       type:DataTypes.INTEGER,
       allowNull: true}
