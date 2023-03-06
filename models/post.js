@@ -1,7 +1,5 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class post extends Model {
     /**
@@ -11,45 +9,48 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       post.belongsTo(models.user, {
-        foreignKey:'userId',
-        as:'posts'
-      })
+        foreignKey: "userId",
+        as: "posts",
+      });
       post.hasMany(models.comment, {
-        foreignKey:'postId',
-        as:'comments-posts'
-      })
+        foreignKey: "postId",
+        as: "comments-posts",
+      });
     }
   }
-  post.init({
-    userName: {
-      type:DataTypes.STRING,
-      allowNull:false
+  post.init(
+    {
+      userName: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      content: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+      },
+      img: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+      likeCount: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      userId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        onDelete: "CASCADE",
+        references: {
+          model: "users",
+          key: "id",
+        },
+      },
     },
-    content: {
-      type:DataTypes.TEXT,
-      allowNull:false
-    },
-    img: {
-      type:DataTypes.STRING,
-      allowNull:true
-    },
-    likeCount: {
-      type:DataTypes.INTEGER,
-      allowNull:true
-    },
-    userId: {
-      type:DataTypes.INTEGER,
-      allowNull:false,
-      onDelete:'CASCADE',
-      references:{
-        model:'users',
-        key:'id'
-      }
-    },
-  }, {
-    sequelize,
-    modelName: 'post',
-    tableName:'posts'
-  });
+    {
+      sequelize,
+      modelName: "post",
+      tableName: "posts",
+    }
+  );
   return post;
 };
