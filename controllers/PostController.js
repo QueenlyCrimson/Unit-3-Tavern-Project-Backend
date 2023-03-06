@@ -1,6 +1,6 @@
 const { post } = require("../models");
 
-console.log(post);
+
 
 const GetAllPost = async (req, res) => {
   try {
