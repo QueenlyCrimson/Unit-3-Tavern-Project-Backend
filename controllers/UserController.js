@@ -1,9 +1,13 @@
-const { user } = require("../models");
+
+const {User} = require('../models')
+
 
 const GetAllUser = async (req, res) => {
   try {
-    const data = await user.findAll();
-    res.send(data);
+
+    const data = await User.findAll()
+    res.send(data)
+
   } catch (error) {
     throw error;
   }
@@ -12,7 +16,7 @@ const GetAllUser = async (req, res) => {
 const GetUser = async (req, res) => {
   try {
     const id = parseInt(req.params.userId);
-    let data = await user.findByPk({ where: { userId: id } });
+    let data = await User.findByPk({ where: { userId: id } });
     res.send(data);
   } catch (error) {
     throw error;
@@ -24,7 +28,7 @@ const CreateUser = async (req, res) => {
     let userBody = {
       ...req.body,
     };
-    let newUser = await user.create(userBody);
+    let newUser = await User.create(userBody);
     res.send(newUser);
   } catch (error) {
     throw error;
@@ -34,7 +38,7 @@ const CreateUser = async (req, res) => {
 const UpdateUser = async (req, res) => {
   try {
     const id = parseInt(req.params.userId);
-    let updateUser = await user.update(req.body, {
+    let updateUser = await User.update(req.body, {
       where: { userId: id },
       returning: true,
     });
@@ -47,7 +51,7 @@ const UpdateUser = async (req, res) => {
 const DeleteUser = async (req, res) => {
   try {
     let id = parseInt(req.params.userId);
-    await user.destroy({ where: { userId: id } });
+    await User.destroy({ where: { userId: id } });
     res.send({ message: `Deleted user with an id of ${id}` });
   } catch (error) {
     throw error;

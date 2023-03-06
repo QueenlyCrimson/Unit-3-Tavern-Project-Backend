@@ -1,8 +1,9 @@
-const { comment } = require("../models");
+const { Comment } = require("../models");
 
 const CreateComment = async (req, res) => {
   try {
-    let data = await comment.create(req.body)
+    let data = await Comment.create(req.body)
+    console.log(data)
     res.send(data)
   } catch (error) {
     throw error;
@@ -11,7 +12,7 @@ const CreateComment = async (req, res) => {
 
 const GetAllComment = async (req, res) => {
   try {
-    let data = await comment.findAll()
+    let data = await Comment.findAll()
     res.send(data)
   } catch (error) {
     throw error;
@@ -21,7 +22,7 @@ const GetAllComment = async (req, res) => {
 const GetCommentById = async(req,res)=>{
   try {
     const id = req.params.comment_id
-    let data = await comment.findByPk(id)
+    let data = await Comment.findByPk(id)
     res.send(data)
   } catch (error) {
     
@@ -33,7 +34,7 @@ const UpdateComment = async (req, res) => {
     let id = req.params.comment_id
     let updatedComment = req.body
     console.log(updatedComment)
-    const data = await comment.update({
+    const data = await Comment.update({
       name:updatedComment.name,
       content:updatedComment.content,
       userId:updatedComment.userId,
@@ -48,7 +49,7 @@ const UpdateComment = async (req, res) => {
 const DestroyComment = async (req, res) => {
   try {
     let id = req.params.comment_id
-    let data = await comment.destroy({where:{id:id}})
+    let data = await Comment.destroy({where:{id:id}})
     res.send(`Deleted Comment with ID of ${id}`)
   } catch (error) {
     throw error;
