@@ -2,7 +2,7 @@
 const falso = require('@ngneat/falso')
 const users = [...Array(50)].map(() => ({
   email: falso.randEmail(),
-  password: falso.randPassword(),
+  passwordDigest: falso.randPassword(),
   userName: falso.randUserName(),
   name: falso.randFullName(),
   createdAt: new Date(),
