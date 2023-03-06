@@ -30,6 +30,16 @@ const GetCommentById = async(req,res)=>{
 
 const UpdateComment = async (req, res) => {
   try {
+    let id = req.params.comment_id
+    let updatedComment = req.body
+    console.log(updatedComment)
+    const data = await comment.update({
+      name:updatedComment.name,
+      content:updatedComment.content,
+      userId:updatedComment.userId,
+      postId:updatedComment.postId
+    },{where:{id:id}})
+    res.send(data)
   } catch (error) {
     throw error;
   }
