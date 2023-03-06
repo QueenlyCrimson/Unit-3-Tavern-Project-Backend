@@ -47,6 +47,9 @@ const UpdateComment = async (req, res) => {
 
 const DestroyComment = async (req, res) => {
   try {
+    let id = req.params.comment_id
+    let data = await comment.destroy({where:{id:id}})
+    res.send(`Deleted Comment with ID of ${id}`)
   } catch (error) {
     throw error;
   }
