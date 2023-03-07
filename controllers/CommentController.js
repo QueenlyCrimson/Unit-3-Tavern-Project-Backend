@@ -3,7 +3,6 @@ const { Comment } = require("../models");
 const CreateComment = async (req, res) => {
   try {
     let data = await Comment.create(req.body)
-    console.log(data)
     res.send(data)
   } catch (error) {
     throw error;
@@ -33,7 +32,6 @@ const UpdateComment = async (req, res) => {
   try {
     let id = req.params.comment_id
     let updatedComment = req.body
-    console.log(updatedComment)
     const data = await Comment.update({
       name:updatedComment.name,
       content:updatedComment.content,
