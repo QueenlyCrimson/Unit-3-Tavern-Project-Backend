@@ -26,7 +26,10 @@ module.exports = (sequelize, DataTypes) => {
     passwordDigest:{
         type:DataTypes.STRING,
         allowNull:false
-       }
+       },
+       profilePic:{
+        type:DataTypes.STRING,
+        allowNull: true}
   }, {
     sequelize,
     modelName: 'User',
