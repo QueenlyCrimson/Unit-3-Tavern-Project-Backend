@@ -25,7 +25,7 @@ const Login = async (req, res) => {
     )
     if (matched) {
       let payload = {
-        id:data.id,
+        // id:data.id,
         email:data.email
       }
       let token = middleware.createToken(payload)
