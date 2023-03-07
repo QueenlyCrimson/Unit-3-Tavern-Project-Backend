@@ -15,8 +15,8 @@ const GetAllUser = async (req, res) => {
 
 const GetUser = async (req, res) => {
   try {
-    const id = parseInt(req.params.userId);
-    let data = await User.findByPk({ where: { userId: id } });
+    const id = req.params.id;
+    let data = await User.findByPk(id);
     res.send(data);
   } catch (error) {
     throw error;

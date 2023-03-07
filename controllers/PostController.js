@@ -11,6 +11,16 @@ const GetAllPost = async (req, res) => {
   }
 };
 
+const GetPostByUserId = async(req,res)=>{
+  try {
+    const userId = req.params.user_id
+    const data = await Post.findAll({where:{userId:userId}})
+    res.send(data)
+  } catch (error) {
+    throw error
+  }
+}
+
 const CreatePost = async (req, res) => {
   try {
     const postBody = {
@@ -47,6 +57,7 @@ const DeletePost = async (req, res) => {
 };
 
 module.exports = {
+  GetPostByUserId,
   GetAllPost,
   CreatePost,
   UpdatePost,
