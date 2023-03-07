@@ -12,11 +12,10 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       Post.belongsTo(models.User,{
         foreignKey:'userId',
-        as:'posts'
+
       })
       Post.hasMany(models.Comment,{
         foreignKey:'postId',
-        as:'comments-posts'
       })
     }
   }

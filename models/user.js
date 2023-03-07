@@ -12,11 +12,9 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       User.hasMany(models.Post,{
         foreignKey:'userId',
-        as:'posts'
       })
       User.hasMany(models.Comment,{
         foreignKey:'userId',
-        as:'comments'
       })
     }
   }
@@ -34,7 +32,7 @@ module.exports = (sequelize, DataTypes) => {
         type:DataTypes.STRING,
         allowNull:false
        },
-       profilePic:{
+    profilePic:{
         type:DataTypes.STRING,
         allowNull: true}
   }, {
