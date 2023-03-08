@@ -1,5 +1,6 @@
 {
   "development": {
+
     "username": "josh",
     "password": "1234",
     "database": "tavern_development",
@@ -7,6 +8,7 @@
     "dialect": "postgres"
   },
   "test": {
+
     "username": "josh",
     "password": "1234",
     "database": "tavern_test",
@@ -14,6 +16,7 @@
     "dialect": "postgres"
   },
   "production": {
+
     "username": "josh",
     "password": "1234",
     "database": "tavern_production",
