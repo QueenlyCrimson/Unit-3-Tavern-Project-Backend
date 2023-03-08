@@ -5,7 +5,7 @@ const comments = [...Array(50)].map(() => ({
   content: falso.randPhrase({ charCount: 50 }),
   userId: falso.randNumber({min:1, max:50}),
   postId: falso.randNumber({min:1, max:50}),
-  likeCount: falso.randNumber({min:1, max:50}),
+  likeCount: falso.randNumber({min:0, max:120}),
   createdAt: new Date(),
   updatedAt: new Date()
 }))
