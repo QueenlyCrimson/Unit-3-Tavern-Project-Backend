@@ -28,6 +28,16 @@ const GetCommentById = async(req,res)=>{
   }
 }
 
+const GetCommentByPostId = async(req,res)=>{
+  try {
+    const postId = req.params.post_id
+    const data = await Comment.findAll({where:{postId:postId}})
+    res.send(data)
+  } catch (error) {
+    throw error
+  }
+}
+
 const UpdateComment = async (req, res) => {
   try {
     let id = req.params.comment_id
@@ -59,5 +69,6 @@ module.exports = {
   GetAllComment,
   UpdateComment,
   DestroyComment,
-  GetCommentById
+  GetCommentById,
+  GetCommentByPostId
 };
