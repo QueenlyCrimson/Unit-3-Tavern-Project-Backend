@@ -15,8 +15,6 @@ const comparePassword = async (storedPassword, password) => {
   return passwordMatch;
 };
 
-const emailCheck = async (email) => {};
-
 const createToken = (payload) => {
   let token = jwt.sign(payload, APP_SECRET);
   return token;
