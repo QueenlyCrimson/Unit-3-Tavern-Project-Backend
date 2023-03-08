@@ -27,7 +27,7 @@ const GetUserByPassword = async (req, res) => {
   try {
     const password = req.params.passwordDigest;
     console.log(password)
-    let data = await User.findOne({where:{passwordDigest:email}});
+    let data = await User.findOne({where:{passwordDigest:password}});
     res.send(data);
   } catch (error) {
     throw error;
