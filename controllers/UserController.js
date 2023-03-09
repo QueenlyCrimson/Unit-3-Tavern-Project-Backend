@@ -19,11 +19,11 @@ const GetUser = async (req, res) => {
   }
 }
 
-const GetUserByPassword = async (req, res) => {
+const GetUserByEmail = async (req, res) => {
   try {
-    const password = req.params.passwordDigest
-    console.log(password)
-    let data = await User.findOne({ where: { passwordDigest: password } })
+    const email = req.params.email
+    console.log(email)
+    let data = await User.findOne({ where: { email: email } })
     res.send(data)
   } catch (error) {
     throw error
@@ -66,7 +66,7 @@ const DeleteUser = async (req, res) => {
 }
 
 module.exports = {
-  GetUserByPassword,
+  GetUserByEmail,
   GetAllUser,
   GetUser,
   CreateUser,
