@@ -48,11 +48,14 @@ const CreateUser = async (req, res) => {
 
 const UpdateUser = async (req, res) => {
   try {
-    const id = parseInt(req.params.userId);
-    let updateUser = await User.update(req.body, {
-      where: { userId: id },
-      returning: true,
-    });
+    const id = parseInt(req.params.userId)
+    const updatedUser = req.body
+    let updateUser = await User.update({
+      name:updatedUser.name,
+      userName:updatedUser.userName,
+      email:updatedUser.email
+    },
+      {where: { id: id }});
     res.send(updateUser);
   } catch (error) {
     throw error;
