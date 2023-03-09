@@ -16,6 +16,11 @@ const comparePassword = async (storedPassword, password) => {
 };
 
 const createToken = (payload) => {
+  let token = jwt.sign(payload, APP_SECRET);
+  return token;
+};
+
+const createTokenExpiring = (payload) => {
   let token = jwt.sign(payload, APP_SECRET, { expiresIn: "1h" });
   return token;
 };
@@ -53,6 +58,7 @@ module.exports = {
   hashPassword,
   comparePassword,
   createToken,
+  createTokenExpiring,
   stripToken,
   verifyToken,
 };
