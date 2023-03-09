@@ -8,6 +8,6 @@ const middleware = require('../middleware')
 Router.use('/auth', AuthRouter)
 Router.use('/comment', CommentRouter)
 Router.use('/post', PostRouter)
-Router.use('rs', UserRouter)
+Router.use('/user', UserRouter)
 
-module.exports=Router
+module.exports = Router
