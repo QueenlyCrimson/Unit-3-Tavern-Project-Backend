@@ -58,7 +58,7 @@ const UpdatePost = async (req, res) => {
 const DeletePost = async (req, res) => {
   try {
     let postId = parseInt(req.params.postId)
-    await Post.destroy({ where: postId })
+    await Post.destroy({ where: { id: postId } })
     res.send({ message: `Deleted Post with an id of ${postId}` })
   } catch (error) {
     throw error
