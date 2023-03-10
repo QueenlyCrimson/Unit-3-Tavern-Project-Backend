@@ -28,13 +28,9 @@ const Login = async (req, res) => {
         email: data.email,
         password: data.passwordDigest,
       };
-      if (rememberMe) {
-        let token = middleware.createToken(payload);
-        return res.send({ data: payload, token });
-      } else {
-        let token = middleware.createTokenExpiring(payload);
-        return res.send({ data: payload, token });
-      }
+
+      let token = middleware.createTokenExpiring(payload);
+      return res.send({ data: payload, token });
     }
     res.status(401).send({ status: "Error", msg: "Incorrect Password" });
   } catch (error) {
