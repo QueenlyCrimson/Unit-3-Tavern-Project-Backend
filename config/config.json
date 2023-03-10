@@ -1,7 +1,7 @@
 {
   "development": {
 
-    "username": "erin",
+    "username": "josh",
 
     "password": "1234",
     "database": "tavern_development",
@@ -10,7 +10,7 @@
   },
   "test": {
 
-    "username": "erin",
+    "username": "josh",
 
     "password": "1234",
     "database": "tavern_test",
@@ -19,7 +19,7 @@
   },
   "production": {
 
-    "username": "erin",
+    "username": "josh",
     "password": "1234",
     "database": "tavern_production",
     "host": "127.0.0.1",

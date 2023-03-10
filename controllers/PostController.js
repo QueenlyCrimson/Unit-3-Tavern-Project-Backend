@@ -12,7 +12,6 @@ const GetAllPost = async (req, res) => {
 const GetPostById = async (req, res) => {
   try {
     let id = req.params.id
-    console.log(id)
     const data = await Post.findByPk(id)
     res.send(data)
   } catch (error) {
